@@ -15,3 +15,10 @@ Key Capabilities:
 📈 Category performance tracking
 
 🚀 Predictive reordering system
+
+Architecture:
+Medallion Data Layers
+Layer	Purpose	Key Datasets	Storage Format
+Bronze	Raw data ingestion	brands, transactions, transaction_lines, products, customers, categories	Parquet
+Silver	Data cleaning & enrichment	cleaned_transactions, enriched_products, standardized_customers, validated_sales	Delta Lake
+Gold	Business-ready analytics	sales_fact, product_dim, customer_dim, time_dim, inventory_snapshot	Materialized Views
